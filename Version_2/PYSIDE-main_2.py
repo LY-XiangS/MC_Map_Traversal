@@ -182,7 +182,7 @@ class MainWindow(QMainWindow, Ui_Form):
             if switch_about[1]:
                 if num <= 27:
                     switch[0] = True
-                elif num > 27 and num <= 729:
+                elif num <= 729:
                     switch[1] = True
                     # 检测num/27是否为整数或有余数
                     if num % 27 == 0:
