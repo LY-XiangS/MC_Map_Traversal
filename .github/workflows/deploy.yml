@@ -49,7 +49,7 @@ jobs:
         uses: actions/download-artifact@v4
 
       - name: Create notes
-        run: git log --pretty=format:"* %h %s by @%an" "$(git tag -l --column "v*" | head -1)..HEAD" > body.txt
+        run: git log --pretty=format:"* %h %s by @%an" "$(git tag -l --column=plain --sort=-creatordate "v*"  | head -1)..HEAD" > body.txt
 
       - name: delete Alpha
         env:
