@@ -60,6 +60,7 @@ class MainWindow(QMainWindow, Ui_Form):
         if start.isnumeric() and num.isnumeric():
             start = int(start)
             num = int(num)
+            end = start + num
             self.plainTextEdit.appendPlainText("检查完成!")
             self.plainTextEdit.appendPlainText("生成中...")
             # 变量初始化
@@ -152,9 +153,7 @@ class MainWindow(QMainWindow, Ui_Form):
                                 if j + 1 == num_remainder:
                                     text_middle += f"{map_1}{j}{map_2}{start+j}{map_3}"
                                 else:
-                                    text_middle += (
-                                        f"{map_1}{j}{map_2}{start+j}{map_3},"
-                                    )
+                                    text_middle += f"{map_1}{j}{map_2}{start+j}{map_3},"
                                 map_num += 1
                             start += num_remainder
                         else:
@@ -162,9 +161,7 @@ class MainWindow(QMainWindow, Ui_Form):
                                 if l + 1 == 27:
                                     text_middle += f"{map_1}{l}{map_2}{start+l}{map_3}"
                                 else:
-                                    text_middle += (
-                                        f"{map_1}{l}{map_2}{start+l}{map_3},"
-                                    )
+                                    text_middle += f"{map_1}{l}{map_2}{start+l}{map_3},"
                                 map_num += 1
                             start += 27
 
